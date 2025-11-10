@@ -1,0 +1,40 @@
+-Alta Complexidade Cognitiva (confirmada pelo ESLint)
+O método generateReport tem uma complexidade cognitiva de 27, o que está muito acima do limite recomendado de 5.
+
+Isso se deve a múltiplas condições if/else aninhadas e loops (laços de repetição).
+
+-Método Longo (Long Method)
+O método generateReport está fazendo muitas coisas ao mesmo tempo:
+
+-Lidar com a formatação do relatório (CSV/HTML).
+
+-Gerenciar as permissões do usuário.
+
+-Processar itens e calcular totais.
+
+-Gerar cabeçalhos e rodapés (headers e footers).
+
+-Código Duplicado (Duplicate Code)
+Há repetição na lógica de geração de relatórios para os formatos CSV e HTML.
+
+-O cálculo total (total += item.value) está duplicado várias vezes.
+
+-Estruturas condicionais semelhantes são repetidas para diferentes tipos de relatório.
+
+-Declarações If Colapsáveis (Collapsible If Statements) (confirmadas pelo ESLint)
+Existem declarações if aninhadas que poderiam ser mescladas (merged), particularmente na seção de role (perfil) de USER.
+
+-Responsabilidades Mistas (Mixed Responsibilities)
+A classe lida tanto com a lógica de negócios (permissões) quanto com a apresentação (formatação HTML/CSV).
+
+Isso viola o Princípio da Responsabilidade Única (Single Responsibility Principle).
+
+-Magic Strings
+Literais de string como 'CSV', 'HTML', 'ADMIN', 'USER' são usadas diretamente no código.
+
+O valor 500 para o limite de permissão do usuário é um número mágico (magic number).
+
+-Lógica Condicional Complexa
+Múltiplos níveis de declarações if/else tornam o código difícil de seguir.
+
+Misturar a lógica específica do formato com as verificações de permissão aumenta a complexidade.
